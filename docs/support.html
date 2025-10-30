@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Support — Eternal Bhagavad Gita</title>
+<meta name="description" content="Contact support for the Eternal Bhagavad Gita app." />
+<style>
+  :root{
+    --bg:#fff; --fg:#1a1a1a; --muted:#666;
+    --card:#fff8e1; --accent:#f4a300; --border:#e8d18a; --link:#0a66c2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#101012; --fg:#eee; --muted:#bbb; --card:#1b1b1f; --accent:#f4a300; --border:#333; --link:#6cb2ff; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:860px;margin:auto;padding:24px}
+  header{padding:12px 0 18px;border-bottom:1px solid var(--border)}
+  h1{margin:0 0 6px}
+  p{margin:8px 0}
+  form{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-top:16px}
+  label{display:block;font-weight:600;margin:12px 0 6px}
+  input,select,textarea{
+    width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:#fff;color:#111;
+  }
+  textarea{min-height:140px;resize:vertical}
+  .row{display:flex;gap:12px;flex-wrap:wrap}
+  .row > div{flex:1 1 260px}
+  .hint{color:var(--muted);font-size:14px}
+  .actions{display:flex;gap:10px;margin-top:14px;align-items:center}
+  button{
+    background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer;
+  }
+  .success,.error{margin-top:12px;font-weight:600}
+  .success{color:#0a7a28}
+  .error{color:#b00020}
+  footer{margin-top:24px;padding-top:12px;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Contact Support</h1>
+      <p class="hint">Questions, bugs, or feature requests? Send us a note and we’ll reply by email.</p>
+    </header>
+
+    <form id="supportForm" action="https://formspree.io/f/xyzbdnzq" method="POST">
+      <!-- Honeypot to reduce spam -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <div class="row">
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required placeholder="e.g., Anand R" />
+        </div>
+        <div>
+          <label for="email">Email to reply to</label>
+          <input id="email" name="_replyto" type="email" required placeholder="you@example.com" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic" required>
+            <option value="">Select…</option>
+            <option>Bug report</option>
+            <option>Feature request</option>
+            <option>Account/Donation</option>
+            <option>General question</option>
+          </select>
+        </div>
+        <div>
+          <label for="platform">Platform</label>
+          <select id="platform" name="platform">
+            <option value="">Both</option>
+            <option>iOS</option>
+            <option>Android</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="subject">Subject</label>
+      <input id="subject" name="subject" type="text" required placeholder="Short summary" />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required placeholder="Please describe the issue or question…"></textarea>
+      <p class="hint">Include chapter/verse, device model, and app version if relevant.</p>
+
+      <!-- Optional metadata -->
+      <input type="hidden" name="app" value="Eternal Bhagavad Gita" />
+      <input type="hidden" name="source" value="support-page" />
+
+      <div class="actions">
+        <button type="submit">Send message</button>
+        <a class="hint" href="mailto:artektrend@gmail.com?subject=Support%20%E2%80%94%20Eternal%20Bhagavad%20Gita">Or email directly</a>
+      </div>
+
+      <p id="status" class="success" style="display:none">Thanks! Your message has been sent. 🙏</p>
+      <p id="error" class="error" style="display:none">Sorry—something went wrong. Please try again or email us directly.</p>
+    </form>
+
+    <footer>
+      © Eternal Bhagavad Gita · A modern reflection of timeless wisdom
+    </footer>
+  </div>
+
+<script>
+  // Optional: show success/error without leaving the page
+  const form = document.getElementById('supportForm');
+  const statusEl = document.getElementById('status');
+  const errorEl = document.getElementById('error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusEl.style.display = 'none';
+    errorEl.style.display = 'none';
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }});
+      if (res.ok) {
+        form.reset();
+        statusEl.style.display = 'block';
+      } else {
+        errorEl.style.display = 'block';
+      }
+    } catch {
+      errorEl.style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>
