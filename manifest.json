@@ -1,0 +1,20 @@
+{
+  "1":  { "tag": "ch1-images",  "file": "chapter1.webp",  "v": "2025-11-10" },
+  "2":  { "tag": "ch2-images",  "file": "chapter2.webp",  "v": "2025-11-10" },
+  "3":  { "tag": "ch3-images",  "file": "chapter3.webp",  "v": "2025-11-10" },
+  "4":  { "tag": "ch4-images",  "file": "chapter4.webp",  "v": "2025-11-10" },
+  "5":  { "tag": "ch5-images",  "file": "chapter5.webp",  "v": "2025-11-10" },
+  "6":  { "tag": "ch6-images",  "file": "chapter6.webp",  "v": "2025-11-10" },
+  "7":  { "tag": "ch7-images",  "file": "chapter7.webp",  "v": "2025-11-10" },
+  "8":  { "tag": "ch8-images",  "file": "chapter8.webp",  "v": "2025-11-10" },
+  "9":  { "tag": "ch9-images",  "file": "chapter9.webp",  "v": "2025-11-10" },
+  "10": { "tag": "ch10-images", "file": "chapter10.webp", "v": "2025-11-10" },
+  "11": { "tag": "ch11-images", "file": "chapter11.webp", "v": "2025-11-10" },
+  "12": { "tag": "ch12-images", "file": "chapter12.webp", "v": "2025-11-10" },
+  "13": { "tag": "ch13-images", "file": "chapter13.webp", "v": "2025-11-10" },
+  "14": { "tag": "ch14-images", "file": "chapter14.webp", "v": "2025-11-10" },
+  "15": { "tag": "ch15-images", "file": "chapter15.webp", "v": "2025-11-10" },
+  "16": { "tag": "ch16-images", "file": "chapter16.webp", "v": "2025-11-10" },
+  "17": { "tag": "ch17-images", "file": "chapter17.webp", "v": "2025-11-10" },
+  "18": { "tag": "ch18-images", "file": "chapter18.webp", "v": "2025-11-10" }
+}
